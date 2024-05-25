@@ -12,7 +12,6 @@ function sleep(ms) {
 
 async function handleMergeClick() {
     async function claim(){
-        console.log(i)
         const phrase = 'masukin phrase disini'
         const keypair = Ed25519Keypair.deriveKeypair(phrase);
         const address = keypair.toSuiAddress()
@@ -74,5 +73,8 @@ async function handleMergeClick() {
         claim()
     }
 
-
-handleMergeClick()
+const i = 10
+while(i>0){
+    await sleep(10000)
+    await handleMergeClick()
+}
